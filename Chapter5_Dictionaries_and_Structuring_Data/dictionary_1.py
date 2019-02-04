@@ -35,7 +35,4 @@ print("Trying some complicated printing...")
 
 print()
 
-
-print_types(myCat)
-
 list_dict(myCat)
