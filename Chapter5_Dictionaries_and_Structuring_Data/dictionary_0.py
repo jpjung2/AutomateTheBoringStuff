@@ -3,6 +3,15 @@
     so I just applied that here for a more challenging example of a dictionary
 """
 
+def recursive_dict(d):
+    for item in d:
+        if type(d[item]) is dict:
+            print("Entering dictionary", item)
+            recursive_dict(d[item])
+        else:
+            print(item, ":", d[item])
+
+
 myCat = {'size': 'skinny', 'color': 'gray', 'age': {'unit': 'months', 'value': 8}}
 
 print(myCat)
@@ -11,5 +20,6 @@ print(myCat['age'])
 
 print(type(myCat['age']))
 
-for part in myCat['age']:
-    print(part, ':', myCat['age'][part])
+
+recursive_dict(myCat)
+
