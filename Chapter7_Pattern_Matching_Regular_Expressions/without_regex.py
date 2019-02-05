@@ -14,3 +14,9 @@ if __name__ == '__main__':
         print("Yay!", pn, "is a valid phone number")
     else:
         print("Invalid number", pn)
+
+    message = 'Call me at 415-555-1011 tomorrow. 415-555-9999 is my office.'
+    for i in range(len(message) - 11):
+        sub = message[i:i+12]
+        if isPhoneNumber(sub):
+            print("Number found:", sub)
