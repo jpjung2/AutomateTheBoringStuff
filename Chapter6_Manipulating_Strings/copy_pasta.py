@@ -1,8 +1,9 @@
 import pyperclip
 
 def copy_pasta():
-    input("Enter some text and I'll copy it to your clipboard:")
+    msg = input("Enter some text and I'll copy it to your clipboard:")
+    pyperclip.copy(msg)
+    print(msg)
 
-
-if __name__ == '__name__':
+if __name__ == '__main__':
     copy_pasta()
