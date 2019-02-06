@@ -36,3 +36,8 @@ bw = plusBat.search(bwowo)
 print(bw.group())
 bm = plusBat.search(batman)
 print(bm)
+print()
+
+anan = re.compile(r"an{2}")
+banana = anan.search("Bananas")
+print(banana.group())
