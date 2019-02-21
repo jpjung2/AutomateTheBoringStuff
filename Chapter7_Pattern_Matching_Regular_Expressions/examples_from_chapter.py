@@ -38,6 +38,36 @@ bm = plusBat.search(batman)
 print(bm)
 print()
 
-anan = re.compile(r"an{2}")
+anan = re.compile(r"(an){2,8}")
 banana = anan.search("Bananas")
 print(banana.group())
+
+bananana = anan.search("Bananananan")
+print(bananana.group())
+print()
+
+# Find all method
+
+phoneRegex = re.compile(r"\d\d\d-\d\d\d-\d\d\d\d")
+nums = phoneRegex.findall("Cell: 555-555-5555; Home: 666-666-6666")
+
+for thing in nums:
+    print(thing)
+
+phoneRegex = re.compile(r"(\d\d\d)-(\d\d\d)-(\d\d\d\d)")
+nums = phoneRegex.findall("Cell: 555-555-5555; Home: 666-666-6666")
+for thing in nums:
+    print(type(thing) == tuple)
+
+# Character Classes
+
+xmasRegex = re.compile(r"\d+\s\w+")
+print(xmasRegex.findall('12 drummers, 11 pipers, 10 lord, 9 ladies, 8 maids, 7 rings'))
+print()
+
+# Making You Own Character Classes
+vowel = re.compile(r"[aeiouAEIOU]")
+print(vowel.findall("The quick brown fox jumped over the lazy dog"))
+consonants = re.compile(r"[^aeiouAEIOU\s]")
+print(consonants.findall("The quick brown fox jumped over the lazy dog"))
+print()
