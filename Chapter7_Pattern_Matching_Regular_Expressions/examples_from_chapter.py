@@ -77,3 +77,22 @@ begin = re.compile(r"^Hello")
 print(begin.findall("Hello, new world"))
 end = re.compile(r"world$")
 print(end.findall("Hello, new world"))
+
+life = "The meaning of life is 42"
+dolla = re.compile(r"\d$")
+print(dolla.findall(life))
+# This only captures 2
+
+whole_num = re.compile(r"\d+$")
+print("The number: ", whole_num.search(life))
+
+alpha_omega = re.compile(r"^\d+$")
+print("This won't work well", alpha_omega.search("1234 5678"))
+print("only works for where everything is a digit: 1234 -->", alpha_omega.search("1234"))
+print("only works for where everything is a digit: 1234x5678 -->", alpha_omega.search("1234x5678"))
+
+# Wildcard Character
+
+wild = re.compile(r".at")
+print(wild.search("I'm not wearing a hat"))
+print(wild.search("The fat cat sat on a hat"))
